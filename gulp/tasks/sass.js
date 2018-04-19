@@ -11,7 +11,7 @@ module.exports = function () {
       browsers: ['last 8 versions']
     }))
     .pipe($.plugin.uncss({
-      html: ['dev/html/**/*html']
+      html: ['dev/html/**/*.html']
     }))
     .pipe($.plugin.sourcemaps.write())
     .pipe($.gulp.dest('build/static/css/'))
@@ -27,7 +27,7 @@ module.exports = function () {
       browsers: ['last 8 versions']
     }))
     .pipe($.plugin.uncss({
-      html: ['dev/html/**/*html']
+      html: ['dev/html/**/*.html']
     }))
     .pipe($.plugin.csso())
     .pipe($.gulp.dest('build/static/css/'));
