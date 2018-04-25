@@ -9,11 +9,10 @@
   cursor: pointer;
   color: $color-light;
   box-shadow: 0px 4px 0px $color-shadow, 0px 3px 15px rgba(0,0,0, 0.3);
-}
 
-/* uncss:ignore */
-.btn:active,
-.btn--active {
-  box-shadow: none;
-  transform: translate(0, 4px);
+  &:active,
+  &--active {
+    box-shadow: none;
+    transform: translate(0, 4px);
+  }
 }

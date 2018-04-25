@@ -12,27 +12,42 @@
   <h1 class="title">The Game</h1>
   <section class="container" id="start">
     <div class="box">
-      <p class="box__text">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos mollitia laboriosam, veniam id facere in. Ratione tempore aperiam rerum in sint. Numquam id, enim sunt quaerat nesciunt modi minus veniam.</p>
+      <p class="box__text indent" id="startText"></p>
     </div>
     <button class="btn" id="play">Play</button>
   </section>
 
   <section class="container hide" id="game">
     <div class="box">
-      <p class="box__text box__text--center" id="question"></p>
+      <p class="box__text box__text--light" id="question"></p>
     </div>
     
-    <input type="text" name="input" placeholder="Enter your answer here" class="input box">
+    <input type="text" name="input"  maxlength="3" placeholder="Enter your answer here" class="input box">
 
-    <button class="btn" id="submit">Submit </button>
+    <button class="btn" id="submit">Submit</button>
 
-    <div id="answer" class="box hide">
-      <p class="box__text box__text--center" id="answerText"></p>
+    <div id="answer" class="box box--column hide">
+      <p class="box__text box__text--light" id="answerNumber"></p>
+      <p class="box__text box__text--padding" id="answerText"></p>
     </div>
+
+    <button class="btn hide" id="restart">Try again</button>
   </section>
+
+  <footer class="footer">
+    <div class="social">
+      <a href="https://github.com/Grosscorp/math-project" class="social__icon" target="_blank">
+        <i class="fab fa-github-square"></i>
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=100010474158642" class="social__icon" target="_blank">
+         <i class="fab fa-facebook-square"></i>
+      </a>
+    </div>
+    <div class="created-by">"The Game v1.0" created by GrossCorp</div>
+  </footer>
 
 
 <script src="static/js/main.js"></script>  
+<script src="static/js/fontawesome-all.min.js"></script>  
 </body>
 </html>

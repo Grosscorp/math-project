@@ -1,0 +1,15 @@
+.social {
+  display: flex;
+
+  &__icon {
+    display: inline-flex;
+    text-decoration: none;
+    color: $color-light;
+    font-size: 25px;
+    margin: 10px;
+
+    &:hover {
+      color: $color-achtung;
+    }
+  }
+}
