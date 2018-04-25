@@ -12,6 +12,11 @@
     flex-direction: column;
   }
 
+  &__answ--wrong {
+    color: #cd0000;
+    text-decoration: line-through;
+  }
+
   &__text {
     margin: 0 auto;
     padding: 20px 40px;
@@ -27,12 +32,4 @@
       padding: 0px 40px 20px 40px;
     }
   }
-
-}
-
-/* uncss:ignore */
-.box__answ--wrong {
-  color: #cd0000;
-  text-decoration: line-through;
-
 }
