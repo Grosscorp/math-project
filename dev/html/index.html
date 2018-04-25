@@ -3,9 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <meta name="description" content="Super Description">
+  <meta name="keywords" content="Super Keywords">
+  <title>Super Title</title>
+  <link rel="stylesheet" type="text/css" href="static/css/style.css">
 </head>
 <body>
-  
+  <h1 class="title">The Game</h1>
+  <section class="container" id="start">
+    <div class="box">
+      <p class="box__text">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos mollitia laboriosam, veniam id facere in. Ratione tempore aperiam rerum in sint. Numquam id, enim sunt quaerat nesciunt modi minus veniam.</p>
+    </div>
+    <button class="btn" id="play">Play</button>
+  </section>
+
+  <section class="container hide" id="game">
+    <div class="box">
+      <p class="box__text box__text--center" id="question"></p>
+    </div>
+    
+    <input type="text" name="input" placeholder="Enter your answer here" class="input box">
+
+    <button class="btn" id="submit">Submit </button>
+
+    <div id="answer" class="box hide">
+      <p class="box__text box__text--center" id="answerText"></p>
+    </div>
+  </section>
+
+
+<script src="static/js/main.js"></script>  
 </body>
 </html>

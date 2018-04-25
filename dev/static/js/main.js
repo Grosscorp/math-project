@@ -1,19 +1,94 @@
-var correctAnsw = 0;
-var falseAnsw = 0;
+window.onload = function() {
 
-function getRandom(min,max) {
-  return Math.floor(Math.random() * ((++max) - min)) + min;
-};
+  var op;
+  var mathRes;
+  var i = 0;
+  var play = document.querySelector('#play');
+  var start = document.querySelector('#start');
+  var game = document.querySelector('#game');
+  var input = document.querySelector('input[name=input]');
+  var question = document.querySelector('#question');
+  var submit = document.querySelector('#submit');
+  var answer = document.querySelector('#answer');
+  var answerText = document.querySelector('#answerText');
+  var placeholder = input.placeholder;
+  var arrAnsw = [];
 
-for (i = 0; i < 10 ; i++) {
-  var x = getRandom(1,20);
-  var y = getRandom(1,20);
-  var op = getRandomOp();
-  var input = +prompt( x + ' ' + op + ' ' + y + ' enter your number' );
+  play.addEventListener('click', function() {
+    start.classList.add('hide');
+    game.classList.remove('hide');
+    input.value = '';
+    showQuest();
+  });
+
+  input.addEventListener('focus', function() {
+    this.placeholder = '';
+  });
+  input.addEventListener('blur', function() {
+    this.placeholder = placeholder;
+  });
+  input.addEventListener('keyup', function(event) {
+    if (event.keyCode == 13) {
+      theGame();
+      submit.classList.remove('btn--active');
+    }
+  });
+  input.addEventListener('keydown', function(event) {
+    if (event.keyCode == 13) {
+      submit.classList.add('btn--active');
+    }
+  });
+
+  submit.addEventListener('click', theGame);
+
+  function theGame() {
+    i++;
+    console.log('i = ' + i);
+
+    if (i < 10) {
+      getAnsw();
+      showQuest();
+    } else {
+      getAnsw();
+      submit.disabled = true;
+      input.disabled = true;
+      answer.classList.remove('hide');
+      answerText.innerHTML = arrAnsw;
+    };
+  };
+
+  function getAnsw() {
+    var userInp = input.value;
+    console.log(userInp);
+
+    if (userInp == mathRes) {
+      arrAnsw.push(userInp);
+      console.log('good');
+      console.log(arrAnsw);
+    } else {
+      arrAnsw.push('<span class="box__answ--wrong">' + userInp + '</span>');
+      console.log('you don\'t know how to do it');
+    };
+  };
+
+  function showQuest() {
+    var x = getRandom(1,20);
+    var y = getRandom(1,20);
+    op = getRandomOp();
+    mathRes = mathOp(x,y);
+    question.innerHTML = x + ' ' + op + ' ' + y;
+    input.value = '';
+
+    console.log(mathRes);
+  };
+
+  function getRandom(min,max) {
+    return Math.floor(Math.random() * ((++max) - min)) + min;
+  };
 
   function getRandomOp() {
-    var arr = ['+', '-', '*', '/'];
-    return arr[getRandom(0,3)];
+    var arr = ['+', '-', '*'];
+    return arr[getRandom(0,2)];
   };
 
   function mathOp (x, y) {
@@ -25,20 +100,12 @@ for (i = 0; i < 10 ; i++) {
       res = x + y;
     } else if (op == '-') {
       res = x - y;
-    } else if ((op == '/') && (y != 0)) {
-      res = x / y;
     } else {
       res = 'something go wrong!'
     }
 
     return res;
   };
-
-  if(input.toFixed(2) === mathOp(x,y).toFixed(2)) {
-    correctAnsw++;
-  } else {
-    falseAnsw++;
-  }
 };
 
-console.log('Correct answers ' + correctAnsw + '\nMistakes ' + falseAnsw);
+

@@ -1,0 +1,63 @@
+// Less then 400px
+$screen-xs-min: 400px;
+
+// Less then 600px
+$screen-sm-min: 600px;
+
+// Small tablets (portrait view)
+$screen-md-min: 900px;
+
+// Tablets and small desktops
+$screen-lg-min: 1200px;
+
+// Large tablets and desktops
+$screen-xl-min: 2000px;
+
+// exemple of use
+// .container {
+//     padding: 0 15px;
+//  576px window width and more
+//     @include sm {
+//         padding: 0 20px;
+//     }
+
+@mixin xs {
+   @media (max-width: #{$screen-xs-min}) {
+       @content;
+   }
+}
+
+// Small devices
+@mixin sm {
+   @media (max-width: #{$screen-sm-min}) {
+       @content;
+   }
+}
+
+// Medium devices
+@mixin md {
+   @media (max-width: #{$screen-md-min}) {
+       @content;
+   }
+}
+
+// Large devices
+@mixin lg {
+   @media (max-width: #{$screen-lg-min}) {
+       @content;
+   }
+}
+
+// Extra large devices
+@mixin xl {
+   @media (max-width: #{$screen-xl-min}) {
+       @content;
+   }
+}
+
+// Custom devices smaller then
+@mixin custom($screen) {
+   @media (max-width: $screen+'px') {
+       @content;
+   }
+}
