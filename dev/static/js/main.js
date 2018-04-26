@@ -9,8 +9,8 @@ window.onload = function() {
   var submit = document.querySelector('#submit');
   var answer = document.querySelector('#answer');
   var answerNumber = document.querySelector('#answerNumber');
+  var answerText = document.querySelector('#answerText');
   var restart = document.querySelector('#restart');
-  var answText = document.querySelector('#answerText')
   var placeholder = input.placeholder;
 
   typeEffect('startText', 'Welcome Human! My name is D3P2. You can speak with me through this communication device, which in your time you call BROWSER. The Rebellion needs you! I need to send highly important message with empire secret war plans, but my com-chip was a little bit burned when I blasted out a few empires machines and one black nasty drone R2Q5. That\'s why I can not dial a wright combination of numbers, and I hope you can help me with this. Now I will show you 10 easy examples, just write the correct answer below.');
@@ -39,19 +39,31 @@ window.onload = function() {
   input.addEventListener('blur', function() {
     this.placeholder = placeholder;
   });
+
   input.addEventListener('keyup', function(event) {
-    if (event.keyCode == 13) {
+    if (event.keyCode == 13 && input.value !== '' && !isNaN(input.value)) {
       theGame();
       submit.classList.remove('btn--active');
-    }
+      input.classList.remove('box--achtung');
+    } else if (event.keyCode == 13) {
+      input.classList.add('box--achtung');
+      submit.classList.remove('btn--active');
+    };
   });
   input.addEventListener('keydown', function(event) {
     if (event.keyCode == 13) {
       submit.classList.add('btn--active');
-    }
+    };
   });
 
-  submit.addEventListener('click', theGame);
+  submit.addEventListener('click', function() {
+    if (input.value !== '' && !isNaN(input.value)) {
+      theGame();
+      input.classList.remove('box--achtung');
+    } else {
+      input.classList.add('box--achtung');
+    };
+  });
 
   function theGame() {
     i++;
@@ -71,10 +83,10 @@ window.onload = function() {
     answer.classList.remove('hide');
     restart.classList.remove('hide');
     answerNumber.innerHTML = arrAnsw.join(', ');
-    answText.innerHTML = '';
+    answerText.innerHTML = '';
 
     if(wrongAnsw == 0) {
-      typeEffect('answerText', 'All numbers are correct. The message was send. Thank you! The Rebellion never forget what you done for them. Let the force be with you!');
+      typeEffect('answerText', 'All numbers are correct. The message was send. Thank you! The Rebellion never forget what you done for them. Let the Force be with you!');
     } else if (wrongAnsw == 1) {
       typeEffect('answerText', 'We was so close! The message was not send. Please try again. Without your help Empire will soon conquer the whole Universe!');
     } else if (wrongAnsw > 1 && wrongAnsw <= 3) {
