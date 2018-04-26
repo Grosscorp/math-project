@@ -1,0 +1,11 @@
+.answ {
+
+  &__wrong {
+    color: #cd0000;
+    text-decoration: line-through;
+  }
+
+  &__true {
+    color: #00ff00;
+  }
+}

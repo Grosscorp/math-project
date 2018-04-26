@@ -10,7 +10,10 @@ module.exports = function () {
 
   $.gulp.task('javascript:dev', function() {
     return $.gulp.src('dev/static/js/**/*.js')
-    .pipe($.gulp.dest('build/static/js/'));
+    .pipe($.gulp.dest('build/static/js/'))
+    .pipe($.browserSync.reload({
+      stream: true
+    }));
   });
 
   $.gulp.task('javascript:build', function() {

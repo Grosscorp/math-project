@@ -1,0 +1,20 @@
+@import 'vendors/normalize';
+
+@import 'helpers/mixins';
+
+@import 'varibles/colors';
+@import 'varibles/varibles';
+
+@import 'general/general';
+@import 'general/typography';
+
+@import 'components/title';
+@import 'components/container';
+@import 'components/btn';
+@import 'components/box';
+@import 'components/display';
+@import 'components/input';
+@import 'components/social';
+@import 'components/answer';
+
+@import 'layout/footer';

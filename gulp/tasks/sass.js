@@ -10,9 +10,6 @@ module.exports = function () {
     .pipe($.plugin.autoprefixer({
       browsers: ['last 8 versions']
     }))
-    .pipe($.plugin.uncss({
-      html: ['dev/html/**/*html']
-    }))
     .pipe($.plugin.sourcemaps.write())
     .pipe($.gulp.dest('build/static/css/'))
     .pipe($.browserSync.reload({
@@ -25,9 +22,6 @@ module.exports = function () {
     .pipe($.plugin.sass())
     .pipe($.plugin.autoprefixer({
       browsers: ['last 8 versions']
-    }))
-    .pipe($.plugin.uncss({
-      html: ['dev/html/**/*html']
     }))
     .pipe($.plugin.csso())
     .pipe($.gulp.dest('build/static/css/'));

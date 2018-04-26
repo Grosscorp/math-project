@@ -1,0 +1,34 @@
+.box {
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+  margin: 20px auto;
+  background: $color-shadow;
+  border: 8px solid $color-dark;
+  border-radius: 10px;
+  box-sizing: border-box;
+
+  &--column {
+    flex-direction: column;
+  }
+
+  &--achtung{
+    box-shadow: inset 0 0 16px 4px rgba(255,0,0,0.24),inset 0 17px 50px 0 rgba(255,0,0,0.10);
+  }
+
+  &__text {
+    margin: 0 auto;
+    padding: 20px 40px;
+    font-size: 18px;
+    color: $color-achtung;
+    line-height: 1.8;
+
+    &--light {
+      color: $color-light;
+    }
+
+    &--padding {
+      padding: 0px 40px 20px 40px;
+    }
+  }
+}
