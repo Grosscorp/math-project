@@ -6,6 +6,11 @@ body {
   background-size: cover;
   font-family: $first-font;
   color: $color-light;
+
+  @include xs {
+    background-position: 0% 0%;
+    background-size: auto;
+  }
 }
 
 // margin: auto auto 0 auto; - use if width not 100%;

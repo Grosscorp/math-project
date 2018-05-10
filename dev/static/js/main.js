@@ -68,7 +68,7 @@ window.onload = function() {
   function theGame() {
     i++;
 
-    if (i < 10) {
+    if (i < 4) {
       getAnsw();
       showQuest();
     } else {

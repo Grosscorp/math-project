@@ -3,4 +3,8 @@
   padding: 20px;
   font-family: $first-font;
   font-size: 18px;
+
+  @include xs {
+    font-size: 14px;
+  }
 }

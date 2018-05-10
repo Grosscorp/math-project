@@ -23,12 +23,30 @@
     color: $color-achtung;
     line-height: 1.8;
 
+    @include xs {
+      padding: 20px;
+      font-size: 12px;
+      line-height: 1.6;
+      text-indent: 0;
+    }
+
     &--light {
       color: $color-light;
     }
 
     &--padding {
       padding: 0px 40px 20px 40px;
+
+      @include xs {
+        padding: 20px;
+      }
+    }
+
+    &--question {
+
+      @include xs {
+        font-size: 14px;
+      }
     }
   }
 }

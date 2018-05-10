@@ -2,9 +2,18 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @include xs {
+    padding: 20px 0 0 0;
+  }
 }
 
 .created-by {
   margin: 0 auto 10px auto;
   font-size: 10px;
+
+  @include xs {
+    text-align: center;
+    line-height: 1.5;
+  }
 }
