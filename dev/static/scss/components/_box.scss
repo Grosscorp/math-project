@@ -8,6 +8,12 @@
   border-radius: 10px;
   box-sizing: border-box;
 
+  &--start {
+    @include sm {
+      min-height: 60vh;
+    }
+  }
+
   &--column {
     flex-direction: column;
   }
@@ -23,11 +29,15 @@
     color: $color-achtung;
     line-height: 1.8;
 
-    @include xs {
+    @include sm {
       padding: 20px;
-      font-size: 12px;
+      font-size: 14px;
       line-height: 1.6;
       text-indent: 0;
+    }
+
+    @include xs {
+      font-size: 12px;
     }
 
     &--light {
@@ -50,3 +60,4 @@
     }
   }
 }
+        
