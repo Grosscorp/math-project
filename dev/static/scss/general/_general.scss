@@ -2,15 +2,10 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background: #fff url('../img/general/math.jpg') no-repeat center;
+  background: #fff url('../img/general/math.jpg') no-repeat fixed center;
   background-size: cover;
   font-family: $first-font;
   color: $color-light;
-
-  @include xs {
-    background-position: 0% 0%;
-    background-size: auto;
-  }
 }
 
 // margin: auto auto 0 auto; - use if width not 100%;
